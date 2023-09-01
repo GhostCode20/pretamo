@@ -40,8 +40,12 @@
                 <asp:TextBox ID="TextBox2" runat="server" placeholder="Empresa"></asp:TextBox>
             </div>
              <div class="form-group">
-                <label for="txt_salario">Salario</label> *
-                <asp:TextBox ID="TextBox1" runat="server" placeholder="Salario"></asp:TextBox>
+                <asp:DropDownList ID="cbx_plazo" runat="server" cssClass="cbx">
+                    <asp:ListItem Value="0">6 meses</asp:ListItem>
+                    <asp:ListItem Value="1">12 meses</asp:ListItem>
+                    <asp:ListItem Value="2">24 meses</asp:ListItem>
+                    <asp:ListItem Value="3">36 meses</asp:ListItem>
+                </asp:DropDownList>
             </div>
             <div class="btn-group">
                 <asp:Button ID="btn_registrar" runat="server" Text="Registrar" CssClass="btn" OnClick="btn_registrar_Click" />
