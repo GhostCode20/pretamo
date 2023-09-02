@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace App_Comercio
+namespace App_Reto1
 {
-    public partial class frm_usuarios : System.Web.UI.Page
+    public partial class frm_registro : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,29 +16,11 @@ namespace App_Comercio
 
         protected void btn_registrar_Click(object sender, EventArgs e)
         {
-            cls_usuarios objUsuarios = new cls_usuarios();
-            objUsuarios.fnt_agregar(txt_codigo.Text, txt_nombre.Text, txt_contacto.Text, txt_correo.Text, txt_direccion.Text);
-            lbl_mensaje.Text = objUsuarios.getMensaje();    
-        }
-
-        protected void btn_consultar_Click(object sender, EventArgs e)
-        {
-            cls_usuarios objconsultar = new cls_usuarios();
-            objconsultar.fnt_consultar(txt_codigo.Text);
-            txt_contacto.Text = objconsultar.getContacto();
-            txt_correo.Text = objconsultar.getCorreo();
-            txt_direccion.Text = objconsultar.getDireccion();
-            txt_nombre.Text = objconsultar.getNombre();
-        }
-
-        protected void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            txt_codigo.Text = "";
-            txt_contacto.Text = "";
-            txt_correo.Text = "";
-            txt_direccion.Text = "";
-            txt_nombre.Text = "";
-            txt_codigo.Focus();
+            cls_credito obj_cls_Credito = new cls_credito();
+            obj_cls_Credito.fnt_agregar(txt_codigo.Text, txt_nombre.Text, txt_apellido.Text,
+                txt_contacto.Text, txt_correo.Text, txt_direccion.Text, txt_salario.Text, txt_empresa_laboral.Text,
+                cbx_plazo.SelectedValue,txt_monto.Text);
+            obj_cls_Credito.getMensaje();
         }
     }
 }
